@@ -27,7 +27,6 @@ public protocol ZSDropDownMenuDataSource: class {
     func titleForRow(at indexPath: ZSIndexPath, for menu: ZSDropDownMenu) -> String
     func numberOfColumns(in menu: ZSDropDownMenu) -> NSInteger
     func titleFor(column: Int, menu: ZSDropDownMenu) -> String
-    
     func TopTitle(column: Int, menu: ZSDropDownMenu) -> String
 }
 
@@ -38,7 +37,7 @@ public extension ZSDropDownMenuDataSource {
     
     func titleFor(column: Int, menu: ZSDropDownMenu) -> String {
         return (menu.datasource?.TopTitle(column: column, menu: menu))!
-        //        return menu.datasource?.titleForRow(at: JNIndexPath(column: column, row: 0), for: menu) ?? ""
+        //  return menu.datasource?.titleForRow(at: ZSIndexPath(column: column, row: 0), for: menu) ?? ""
     }
 }
 
@@ -67,7 +66,7 @@ public class ZSDropDownMenu: UIView {
     open var TopSelectTitleColor = UIColor.init(red: 89/255, green: 155/255, blue: 1, alpha: 1)
     open var cellSelectionColor = UIColor.init(white: 0.9, alpha: 1.0)
     open var textFont = UIFont.systemFont(ofSize: CGFloat(14.0))
-    open var updateColumnTitleOnSelection = true
+    open var updateColumnTitleOnSelection = true 
     open var arrowPostion: ArrowPosition = .Right
     open weak var datasource: ZSDropDownMenuDataSource? {
         didSet {
@@ -212,7 +211,7 @@ public class ZSDropDownMenu: UIView {
     }
     
     func calculateTitleSizeWith(string: String) -> CGSize {
-        let dict = [NSAttributedStringKey.font: textFont]
+        let dict  = [NSAttributedStringKey.font: textFont]
         let constraintRect = CGSize(width: 280, height: 0)
         let rect = string.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: dict, context: nil)
         return rect.size
@@ -391,7 +390,7 @@ extension ZSDropDownMenu: UITableViewDataSource, UITableViewDelegate {
         let title = self.titles[self.currentSelectedMenuIndex]
         if updateColumnTitleOnSelection {
             title.string = self.datasource?.titleForRow(at: ZSIndexPath(column: self.currentSelectedMenuIndex, row: row), for: self)
-        }//zsbug
+        }
         self.animate(indicator: indicators[self.currentSelectedMenuIndex], background: self.backGroundView, tableView: self.tableView, title: titles[self.currentSelectedMenuIndex], forward: false) { _ in
             self.show = false
         }

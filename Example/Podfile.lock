@@ -1,5 +1,5 @@
 PODS:
-  - ZSDropDownMenu (0.1.0)
+  - ZSDropDownMenu (0.1.2)
 
 DEPENDENCIES:
   - ZSDropDownMenu (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZSDropDownMenu: a0f85a7474826aff49d517e1ac02d9da6c5e848e
+  ZSDropDownMenu: 01982e82140edca76dc203d7e643c94696dbaf49
 
 PODFILE CHECKSUM: b986ed5b230f99609d4ca470bb826a7b30e6e4de
 

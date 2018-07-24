@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZSDropDownMenu'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'ZSDropDownMenu 是swift版本的，下拉选择菜单'
+  s.swift_version    =  '4.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,10 +19,10 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
- ZSDropDownMenu 是swift版本的下拉选择菜单，后期会不断更新，二级菜单，三级菜单，敬请期待
+  ZSDropDownMenu 是swift版本的下拉选择菜单，后期会不断更新，二级菜单，三级菜单，敬请期待
                        DESC
 
-  s.homepage         = 'https://github.com/郑大帅/ZSDropDownMenu'
+  s.homepage         = 'https://github.com/zhengdashuai/ZSDropDownMenu'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '郑大帅' => '1020351736@qq.com' }
@@ -30,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ZSDropDownMenu/Classes/**/*'
+  s.source_files = 'ZSDropDownMenu/Classes/ZSDropDownMenu.swift'
   
   # s.resource_bundles = {
   #   'ZSDropDownMenu' => ['ZSDropDownMenu/Assets/*.png']
