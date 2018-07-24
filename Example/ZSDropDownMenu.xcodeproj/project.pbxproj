@@ -29,9 +29,9 @@
 
 /* Begin PBXFileReference section */
 		018642C42BF624C7DA4C3D48 /* Pods-ZSDropDownMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSDropDownMenu_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZSDropDownMenu_Example/Pods-ZSDropDownMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
-		1DAFA5A13C9DDBF30985F8B7 /* ZSDropDownMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZSDropDownMenu.podspec; path = ../ZSDropDownMenu.podspec; sourceTree = "<group>"; };
+		1DAFA5A13C9DDBF30985F8B7 /* ZSDropDownMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZSDropDownMenu.podspec; path = ../ZSDropDownMenu.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4492D6E361A59005940236D5 /* Pods_ZSDropDownMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZSDropDownMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		580A92CFD6E33F5805F14DC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		580A92CFD6E33F5805F14DC2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5CEBEC6E4F0FF199D7C4CB31 /* Pods-ZSDropDownMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSDropDownMenu_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZSDropDownMenu_Tests/Pods-ZSDropDownMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ZSDropDownMenu_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZSDropDownMenu_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		83DFB8BC07E70C18A4A2DFDC /* Pods_ZSDropDownMenu_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZSDropDownMenu_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C80B8BD1E8CD66258598C20D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C80B8BD1E8CD66258598C20D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F23CC269AE3019D6678E4F96 /* Pods-ZSDropDownMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSDropDownMenu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZSDropDownMenu_Tests/Pods-ZSDropDownMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FBF48F9E8F0E1CB44D6D60A8 /* Pods-ZSDropDownMenu_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSDropDownMenu_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZSDropDownMenu_Example/Pods-ZSDropDownMenu_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */

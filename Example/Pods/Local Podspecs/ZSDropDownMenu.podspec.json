@@ -1,0 +1,22 @@
+{
+  "name": "ZSDropDownMenu",
+  "version": "0.1.0",
+  "summary": "A short description of ZSDropDownMenu.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/郑大帅/ZSDropDownMenu",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "郑大帅": "1020351736@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/郑大帅/ZSDropDownMenu.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ZSDropDownMenu/Classes/**/*"
+}
