@@ -28,10 +28,11 @@ class ViewController: UIViewController {
         menu.textColor = UIColor.init(red: 102/255, green: 102/255, blue: 102/255, alpha: 1)
         //  menu.cellBgColor = UIColor.green
         //  menu.arrowColor = UIColor.black
-        //  menu.cellSelectionColor = UIColor.white
+        menu.cellSelectionColor = UIColor.white
         //  menu.textFont = UIFont.boldSystemFont(ofSize: 16.0)
         menu.updateColumnTitleOnSelection = false
         //   menu.arrowPostion = .Left
+       // menu.showSeparatorLine = true
         menu.datasource = self
         menu.delegate = self
         self.view.addSubview(menu)

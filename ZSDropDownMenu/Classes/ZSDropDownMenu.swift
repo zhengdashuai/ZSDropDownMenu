@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+
+public let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+public let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+
 public enum ArrowPosition: String {
     case Left
     case Right
@@ -65,8 +70,9 @@ public class ZSDropDownMenu: UIView {
     open var cellBgColor = UIColor.white
     open var TopSelectTitleColor = UIColor.init(red: 89/255, green: 155/255, blue: 1, alpha: 1)
     open var cellSelectionColor = UIColor.init(white: 0.9, alpha: 1.0)
-    open var textFont = UIFont.systemFont(ofSize: CGFloat(14.0))
-    open var updateColumnTitleOnSelection = true 
+    open var textFont = UIFont.systemFont(ofSize: CGFloat(13.0))
+    open var updateColumnTitleOnSelection = true
+    open var showSeparatorLine = true
     open var arrowPostion: ArrowPosition = .Right
     open weak var datasource: ZSDropDownMenuDataSource? {
         didSet {
@@ -78,6 +84,7 @@ public class ZSDropDownMenu: UIView {
     
     open weak var delegate: ZSDropDownMenuDelegate?
     func setUpUI() {
+        let numberOfLine = Int(SCREEN_WIDTH ) / self.numOfMenu
         let textLayerInterval = self.frame.size.width / CGFloat(( self.numOfMenu * 2))
         let bgLayerInterval = self.frame.size.width / CGFloat(self.numOfMenu)
         var tempTitles: [CATextLayer] = []
@@ -111,10 +118,17 @@ public class ZSDropDownMenu: UIView {
                                             y: self.frame.size.height / 2)
             }
             //indicator
-            let indicator = self.createIndicator(color: self.arrowColor,
+            let indicator = self.createIndicator(color: self.textColor,
                                                  point: indicatorPosition)
             self.layer.addSublayer(indicator)
             tempIndicators.append(indicator)
+            
+            if i != self.numOfMenu - 1  && showSeparatorLine{
+                let linePoint = CGPoint(x:CGFloat(ceilf(Float((i + 1) * numberOfLine))) - 1 ,y: self.frame.size.height / 2)
+                let SeparatorLine = self.createSeparator(color: UIColor.lightGray, point: linePoint)
+                self.layer.addSublayer(SeparatorLine)
+                
+            }
         }
         titles = tempTitles
         indicators = tempIndicators
@@ -183,6 +197,25 @@ public class ZSDropDownMenu: UIView {
         layer.path = path.cgPath
         layer.lineWidth = 1.0
         layer.fillColor = color.cgColor
+        
+        let bound = CGPath(__byStroking: layer.path!, transform: nil, lineWidth: layer.lineWidth, lineCap: .butt, lineJoin: .miter, miterLimit: layer.miterLimit)!
+        
+        layer.bounds = bound.boundingBoxOfPath
+        
+        layer.position = point
+        
+        return layer
+    }
+    func createSeparator(color: UIColor, point: CGPoint) -> CAShapeLayer {
+        let layer = CAShapeLayer()
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: 0, y: 20))
+        
+        layer.path = path.cgPath
+        layer.lineWidth = 1.0
+        layer.strokeColor = color.cgColor
         
         let bound = CGPath(__byStroking: layer.path!, transform: nil, lineWidth: layer.lineWidth, lineCap: .butt, lineJoin: .miter, miterLimit: layer.miterLimit)!
         
@@ -271,6 +304,11 @@ extension ZSDropDownMenu {
         let angle = forward ? Double.pi : 0
         let rotate = CGAffineTransform(rotationAngle: CGFloat(angle))
         indicator.transform = CATransform3DMakeAffineTransform(rotate)
+        if forward {
+            indicator.fillColor = self.TopSelectTitleColor.cgColor
+        }else {
+               indicator.fillColor = self.textColor.cgColor
+        }
         completion(true)
     }
     
@@ -279,7 +317,7 @@ extension ZSDropDownMenu {
             self.superview?.addSubview(view)
             view.superview?.addSubview(self)
             UIView.animate(withDuration: 0.2, animations: {
-                view.backgroundColor = UIColor.init(white: 0.0, alpha: 0.3)
+                view.backgroundColor = UIColor.init(white: 0.0, alpha: 0.1)
                 completion(true)
             })
         } else {
@@ -371,6 +409,7 @@ extension ZSDropDownMenu: UITableViewDataSource, UITableViewDelegate {
         
         cell?.backgroundColor = cellBgColor
         cell?.textLabel?.font = textFont
+        cell?.textLabel?.textColor = textColor
         
         cell?.separatorInset = UIEdgeInsets.zero
         
